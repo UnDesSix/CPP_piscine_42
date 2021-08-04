@@ -2,7 +2,7 @@
 # define __PHONEBOOK
 # include <string>
 # include "Contact.hpp"
-# define CONTACT_NB 4
+# define CONTACT_NB 8
 
 class Phonebook
 {
