@@ -5,10 +5,11 @@ _INFO		=	[$(_YELLOW)INFO$(_RESET)]
 _SUCCESS	=	[$(_GREEN)SUCCESS$(_RESET)]
 _CLEAR		=	\033[2K\c
 
-NAME = megaphone
+NAME = nokia3310
 
 SRCS_DIR = ./
-SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name *.cpp))
+SRCS = main.cpp Phonebook.cpp Contact.cpp
+#SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name *.cpp))
 
 
 FLAGS = -Wall -Wextra -Werror
@@ -23,11 +24,11 @@ $(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
 	@clang++ $(FLAGS) -c $< -o $@
 	@ echo "$(_CLEAR)"
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	@ echo "$(_INFO) Initialize $(NAME)"
 	@clang++ $(FLAGS) -o $(NAME) $(OBJS)
-
-all: $(NAME)
 	@ echo "$(_SUCCESS) Compilation done"
 
 clean:
