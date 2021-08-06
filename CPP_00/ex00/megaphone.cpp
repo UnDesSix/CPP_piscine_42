@@ -19,7 +19,10 @@ int main(int argc, char **argv)
     std::string finalString;
 
     if (argc < 2)
+    {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+        return 0;
+    }
     while (i < argc)
         finalString += upperString(argv[i++]);
     std::cout << finalString << std::endl;
