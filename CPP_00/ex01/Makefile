@@ -8,11 +8,10 @@ _CLEAR		=	\033[2K\c
 NAME = nokia3310
 
 SRCS_DIR = ./
-SRCS = main.cpp Phonebook.cpp Contact.cpp
-#SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name *.cpp))
+SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
 
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
