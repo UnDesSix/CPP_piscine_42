@@ -42,7 +42,7 @@ void Phonebook::search(void)
     std::getline(std::cin, strIndex);
     try
     {
-        index = std::stoi(strIndex);
+        index = stoi(strIndex);
         if (strIndex.length() > 1 || index < 0 || index >= m_totalContact) {
             std::cout << "Wrong index." << std::endl;
         } else {
