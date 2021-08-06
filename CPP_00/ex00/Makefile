@@ -8,10 +8,10 @@ _CLEAR		=	\033[2K\c
 NAME = megaphone
 
 SRCS_DIR = ./
-SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name *.cpp))
+SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
 
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
@@ -26,9 +26,9 @@ $(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
 $(NAME): $(OBJS)
 	@ echo "$(_INFO) Initialize $(NAME)"
 	@clang++ $(FLAGS) -o $(NAME) $(OBJS)
+	@ echo "$(_SUCCESS) Compilation done"
 
 all: $(NAME)
-	@ echo "$(_SUCCESS) Compilation done"
 
 clean:
 	@ echo "$(_INFO) Deleting object files and directories"
