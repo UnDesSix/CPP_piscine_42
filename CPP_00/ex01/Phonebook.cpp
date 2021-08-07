@@ -49,18 +49,5 @@ void Phonebook::search(void)
         std::cout << "Wrong index." << std::endl;
     else
         m_contact[index].displayCard();
-    // try
-    // {
-    //     index = stoi(strIndex);
-    //     if (strIndex.length() > 1 || index < 0 || index >= m_totalContact) {
-    //         std::cout << "Wrong index." << std::endl;
-    //     } else {
-    //         m_contact[index].displayCard();
-    //     }
-    // }
-    // catch(const std::invalid_argument& e)
-    // {
-    //     std::cout << "Wrong index." << std::endl;
-    // }
     return;
 }
