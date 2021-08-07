@@ -32,26 +32,35 @@ void Phonebook::add(void)
 
 void Phonebook::search(void)
 {
-    int index;
+    int index(-1);
     std::string strIndex;
+    std::string const correctIndexes[] = {"0", "1", "2", "3", "4", "5", "6", "7"};
+
     std::cout << std::endl <<  "============ Searching contact ============" << std::endl;    
     std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
     for (int i(0); i < m_totalContact; i++)
         m_contact[i].displayContactsList();
     std:: cout << "Enter an index: ";
     std::getline(std::cin, strIndex);
-    try
-    {
-        index = stoi(strIndex);
-        if (strIndex.length() > 1 || index < 0 || index >= m_totalContact) {
-            std::cout << "Wrong index." << std::endl;
-        } else {
-            m_contact[index].displayCard();
-        }
-    }
-    catch(const std::invalid_argument& e)
-    {
+    for (int i(0); i < m_totalContact; i++)
+        if (strIndex.compare(correctIndexes[i]) == 0)
+            index = strIndex[0] - 48;
+    if (index == -1)
         std::cout << "Wrong index." << std::endl;
-    }
+    else
+        m_contact[index].displayCard();
+    // try
+    // {
+    //     index = stoi(strIndex);
+    //     if (strIndex.length() > 1 || index < 0 || index >= m_totalContact) {
+    //         std::cout << "Wrong index." << std::endl;
+    //     } else {
+    //         m_contact[index].displayCard();
+    //     }
+    // }
+    // catch(const std::invalid_argument& e)
+    // {
+    //     std::cout << "Wrong index." << std::endl;
+    // }
     return;
 }
