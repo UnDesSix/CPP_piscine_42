@@ -7,16 +7,15 @@
 class Phonebook
 {
     public:
-    Phonebook();
-    ~Phonebook();
-    void add(void);
-    void search(void);
+        Phonebook();
+        ~Phonebook();
+        void add(void);
+        void search(void);
 
     private:
-    int m_oldestIndex;
-    int m_totalContact;
-    Contact m_contact[CONTACT_NB];
-
+        int m_oldestIndex;
+        int m_totalContact;
+        Contact m_contact[CONTACT_NB];
 };
 
 #endif
