@@ -19,6 +19,6 @@ int main()
         jim.setWeapon(club);
         jim.attack();
         club.setType("some other type of club");
-        bob.attack();
+        jim.attack();
     }
 }
