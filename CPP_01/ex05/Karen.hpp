@@ -17,4 +17,6 @@ class Karen
         void    error(void) const;
 };
 
+typedef void (Karen::*fcn_t)(void) const;
+
 #endif

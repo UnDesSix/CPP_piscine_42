@@ -5,7 +5,7 @@ _INFO		=	[$(_YELLOW)INFO$(_RESET)]
 _SUCCESS	=	[$(_GREEN)SUCCESS$(_RESET)]
 _CLEAR		=	\033[2K\c
 
-NAME = unnecessaryViolence
+NAME = karen
 
 SRCS_DIR = ./
 SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
