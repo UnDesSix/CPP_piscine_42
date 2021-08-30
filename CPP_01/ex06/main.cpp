@@ -16,16 +16,16 @@ int main(int argc, char const **argv)
     switch (i)
     {
         case 0:
-            karen.complain(levels[i]);
+            karen.complain("DEBUG");
             break;
         case 1:
-            karen.complain(levels[i]);
+            karen.complain("INFO");
             break;
         case 2:
-            karen.complain(levels[i]);
+            karen.complain("WARNING");
             break;
         case 3:
-            karen.complain(levels[i]);
+            karen.complain("ERROR");
             break;
         default:
             std::cout << "[ Probably complaining about insignifiant problems ]";
