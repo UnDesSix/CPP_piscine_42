@@ -17,13 +17,10 @@ int main(int argc, char const **argv)
     {
         case 0:
             karen.complain("DEBUG");
-            break;
         case 1:
             karen.complain("INFO");
-            break;
         case 2:
             karen.complain("WARNING");
-            break;
         case 3:
             karen.complain("ERROR");
             break;
