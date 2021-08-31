@@ -53,11 +53,11 @@ int main(void)
     std::cout << "++a : " << ++a << std::endl;
     std::cout << "b : " << b << std::endl;
 
-    std::cout << "min(a,b) is " << a.min(a, b) << std::endl;
-    std::cout << "min(c,d) is " << c.min(c, d) << std::endl;
+    std::cout << "min(a,b) is " << Fixed::min(a, b) << std::endl;
+    std::cout << "min(c,d) is " << Fixed::min(c, d) << std::endl;
 
-    std::cout << "min(a,b) is " << a.max(a, b) << std::endl;
-    std::cout << "min(c,d) is " << c.max(a, d) << std::endl;
+    std::cout << "min(a,b) is " << Fixed::max(a, b) << std::endl;
+    std::cout << "min(c,d) is " << Fixed::max(c, d) << std::endl;
 
     return 0;
 }

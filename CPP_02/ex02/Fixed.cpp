@@ -23,7 +23,7 @@ Fixed::Fixed(float const f) : _pfValue(roundf(f * (1 << _factionnalBitsNb)))
 
 Fixed::Fixed(Fixed const &rhs)
 {
-    // std::cout << "rhs constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = rhs;
 }
 
@@ -168,14 +168,14 @@ float   Fixed::toFloat(void) const
     return (float)_pfValue / (1 << _factionnalBitsNb);
 }
 
-Fixed&  Fixed::min(Fixed& a, Fixed& b) const
+Fixed&  Fixed::min(Fixed& a, Fixed& b)
 {
     if (a <= b)
         return a;
     return b;
 }
 
-Fixed const&  Fixed::min(Fixed const &a, Fixed const &b) const
+Fixed const&  Fixed::min(Fixed const &a, Fixed const &b)
 {
     if (a <= b)
         return a;
@@ -183,14 +183,14 @@ Fixed const&  Fixed::min(Fixed const &a, Fixed const &b) const
 }
 
 
-Fixed&  Fixed::max(Fixed& a, Fixed& b) const
+Fixed&  Fixed::max(Fixed& a, Fixed& b)
 {
     if (a >= b)
         return a;
     return b;
 }
 
-Fixed const&  Fixed::max(Fixed const &a, Fixed const &b) const
+Fixed const&  Fixed::max(Fixed const &a, Fixed const &b)
 {
     if (a >= b)
         return a;
