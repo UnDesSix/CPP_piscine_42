@@ -16,7 +16,7 @@ Fixed::Fixed(Fixed const &copy)
 
 Fixed::~Fixed()
 {
-    std::cout << "Desctructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
