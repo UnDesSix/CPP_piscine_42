@@ -5,7 +5,7 @@
 class   Fixed
 {
     public:
-        Fixed(void);
+        Fixed();
         Fixed(Fixed const &copy);
         ~Fixed();
         int     getRawBits(void) const;
