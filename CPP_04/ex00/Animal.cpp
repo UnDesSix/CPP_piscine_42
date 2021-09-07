@@ -6,14 +6,12 @@
 
 Animal::Animal() : _type("default")
 {
-}
-
-Animal::Animal(std::string type) : _type(type)
-{
+    std::cout << C_GREEN << "Animal's default constructor called>" << C_RESET << std::endl;
 }
 
 Animal::Animal(Animal const &copy) : _type(copy._type)
 {
+    std::cout << C_GREEN << "Animal's copy constructor called>" << C_RESET << std::endl;
 }
 
 /*
@@ -22,6 +20,7 @@ Animal::Animal(Animal const &copy) : _type(copy._type)
 
 Animal::~Animal()
 {
+    std::cout << C_RED << "Animal's destructor called>" << C_RESET << std::endl;
 }
 
 /*
@@ -30,6 +29,7 @@ Animal::~Animal()
 
 Animal& Animal::operator=(Animal const &rhs)
 {
+    std::cout << C_YELLOW << "Animal's assignation operator called>" << C_RESET << std::endl;
     if (this != &rhs)
         _type = rhs._type;
     return *this;

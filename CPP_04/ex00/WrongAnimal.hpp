@@ -1,5 +1,5 @@
-#ifndef __ANIMAL
-# define __ANIMAL
+#ifndef __WRONGANIMAL
+# define __WRONGANIMAL
 
 # include <iostream>
 # include <string>
@@ -10,15 +10,15 @@
 # define C_CYAN "\e[34m"
 # define C_RESET "\e[0m"
 
-class   Animal
+class   WrongAnimal
 {
     public:
-        Animal();
-        Animal(Animal const &copy);
-        virtual ~Animal();
-        Animal& operator=(Animal const &rhs);
+        WrongAnimal();
+        WrongAnimal(WrongAnimal const &copy);
+        virtual ~WrongAnimal();
+        WrongAnimal& operator=(WrongAnimal const &rhs);
     
-        virtual void    makeSound(void) const;
+        void    makeSound(void) const;
         std::string     getType(void) const;
         void            setType(std::string const &type);
 
