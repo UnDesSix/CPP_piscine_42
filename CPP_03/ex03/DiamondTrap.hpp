@@ -16,7 +16,7 @@ class   DiamondTrap : public ScavTrap, public FragTrap
         DiamondTrap(DiamondTrap const &src);
         ~DiamondTrap();
 
-        DiamondTrap&  DiamondTrap::operator=(DiamondTrap const &rhs);
+        DiamondTrap&  operator=(DiamondTrap const &rhs);
         
         void    whoAmI(void);
         using   ScavTrap::_energyPoints;
