@@ -65,6 +65,6 @@ void    ScavTrap::guardGate(void)
 
 void    ScavTrap::attack(std::string const &target)
 {
-    std::cout << "ScavTRap " << _name << " attacks " << target;
+    std::cout << "ScavTrap " << _name << " attacks " << target;
     std::cout << std::endl;
 }

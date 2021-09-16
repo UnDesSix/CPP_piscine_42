@@ -10,7 +10,7 @@ ClapTrap(), ScavTrap(), FragTrap(), _name(ClapTrap::_name)
 {
     ClapTrap::_name += "_clap_name";
     _energyPoints = 50;
-    std::cout << C_CYAN << "<" << _name 
+    std::cout << C_CYAN << "\t<" << _name 
     << "'s DiamondTrap default constructor called>" << C_RESET << std::endl;
 }
 
