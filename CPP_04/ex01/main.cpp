@@ -43,6 +43,10 @@ int main()
         firstBrain.printIdeas(3);
         Dog snoopy(firstBrain);
         Dog milou(snoopy);
+
+        snoopy.printAddr();
+        milou.printAddr();
+
         snoopy.printIdeas(3);
         milou.printIdeas(3);
         snoopy.setAnIdea(0, "First idea  : sleep");
@@ -55,6 +59,8 @@ int main()
         snoopy.printIdeas(3);
         milou.printIdeas(3);
     }
+
+
 
     return 0;
 }

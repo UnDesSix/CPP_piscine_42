@@ -76,3 +76,8 @@ void    Dog::printIdeas(size_t const &number) const
 {
     this->_brain->printIdeas(number);
 }
+
+void    Dog::printAddr(void) const
+{
+    std::cout << "Brain Addr : " << &this->_brain << std::endl;
+}
