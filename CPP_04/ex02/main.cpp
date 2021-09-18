@@ -60,5 +60,10 @@ int main()
         milou.printIdeas(3);
     }
 
+    // // ABSTRACT TEST
+    // AAnimal test;
+
+    // test.makeSound();
+
     return 0;
 }
