@@ -36,10 +36,7 @@ Ice& Ice::operator=(Ice const &rhs)
 */
 AMateria*   Ice::clone(void) const
 {
-    if (!this)
-        return NULL;
-    else
-        return new Ice();
+    return new Ice();
 }
 
 void        Ice::use(ICharacter &target)

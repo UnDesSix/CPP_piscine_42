@@ -5,7 +5,7 @@
 */
 Cure::Cure()
 {
-    _type = "Cure";
+    _type = "cure";
 }
 
 Cure::Cure(Cure const &copy)
@@ -36,10 +36,7 @@ Cure& Cure::operator=(Cure const &rhs)
 */
 AMateria*   Cure::clone(void) const
 {
-    if (!this)
-        return NULL;
-    else
-        return new Cure();
+    return new Cure();
 }
 
 void        Cure::use(ICharacter &target)

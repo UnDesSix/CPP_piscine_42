@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 /*
 ** ---------------- CONSTRUCTORS ----------------
@@ -44,7 +45,7 @@ Character&  Character::operator=(Character const &rhs)
         for (size_t i = 0; i < INV_SIZE; i++)
         {
             if (this->_inventory[i] != NULL)
-                delete _inventory[i];
+                delete this->_inventory[i];
             this->_inventory[i] = rhs._inventory[i]->clone();
         }
     }
@@ -58,13 +59,19 @@ Character&  Character::operator=(Character const &rhs)
 void                Character::equip(AMateria* m)
 {
     for (size_t i = 0; i < INV_SIZE; i++)
+    {
         if (this->_inventory[i] == NULL)
+        {
             this->_inventory[i] = m;
+            return ;
+        }
+    }
 }
 
 void                Character::unequip(int idx)
 {
-    this->_inventory[idx] = NULL;
+    if (idx < INV_SIZE && this->_inventory[idx] != NULL)
+        this->_inventory[idx] = NULL;
 }
 
 void                Character::use(int idx, ICharacter& target)
