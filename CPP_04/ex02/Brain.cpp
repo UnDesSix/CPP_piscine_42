@@ -1,5 +1,8 @@
 #include "Brain.hpp"
 
+/*
+** ---------------- CONSTRUCTOR ----------------
+*/
 Brain::Brain()
 {
     std::cout << C_CYAN << "\t<" << "Brain's default constructor called>" << C_RESET << std::endl;
@@ -11,11 +14,17 @@ Brain::Brain(Brain const &copy)
     *this = copy;
 }
 
+/*
+** ---------------- DESTRUCTOR ----------------
+*/
 Brain::~Brain()
 {
     std::cout << C_CYAN << "\t<" << "Brain's destructor called>" << C_RESET << std::endl;
 }
 
+/*
+** ---------------- OVERLOAD ----------------
+*/
 Brain&  Brain::operator=(Brain const &rhs)
 {
     std::cout << C_YELLOW << "\t<" << "Brain's assignation operator called>" << C_RESET << std::endl;
@@ -27,6 +36,9 @@ Brain&  Brain::operator=(Brain const &rhs)
     return *this;
 }
 
+/*
+** ---------------- MEMBER FUNCTION ----------------
+*/
 void    Brain::setAnIdea(size_t const &location, std::string const &idea)
 {
     if (location >= 0 && location <= 99)
