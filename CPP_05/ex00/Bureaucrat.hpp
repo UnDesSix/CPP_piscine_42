@@ -1,9 +1,12 @@
 #ifndef __BUREAUCRAT
 # define __BUREAUCRAT
 
-#include <exception>
-#include <string>
-#include <iostream>
+# include <exception>
+# include <string>
+# include <iostream>
+
+# define GRADE_MAX 1
+# define GRADE_MIN 150
 
 class   Bureaucrat
 {
@@ -11,14 +14,20 @@ class   Bureaucrat
         Bureaucrat();
         Bureaucrat(std::string name, int grade);
         Bureaucrat(Bureaucrat const &src);
+
         ~Bureaucrat();
+
         Bureaucrat& operator=(Bureaucrat const &rhs);
         
-        int const           getGrade(void) const;
+        int                 getGrade(void) const;
         std::string const   getName(void) const;
 
         void    getPromotion(void);
         void    getDemotion(void);
+    
+    private:
+        std::string const   _name;
+        int                 _grade;
 
         class   GradeTooHighException : public std::exception
         {
@@ -29,14 +38,9 @@ class   Bureaucrat
         {
             public:
                 virtual const char*   what() const throw();
-        };
-    
-    private:
-        std::string const   _name;
-        int                 _grade;
-    
+        };    
 };
 
-std::iostream& operator<<(std::iostream &o, Bureaucrat const &src);
+std::ostream& operator<<(std::ostream &o, Bureaucrat const &rhs);
 
 #endif
