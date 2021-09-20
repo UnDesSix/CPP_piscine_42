@@ -20,8 +20,11 @@ int main()
     std::cout << tom << std::endl;
     try
     {
-        while (tom.getGrade() > GRADE_MAX)
+        while (tom.getGrade() > GRADE_MAX || matt.getGrade() > GRADE_MAX)
+        {
             tom.getPromotion();
+            matt.getPromotion();
+        }
     }
     catch(const std::exception& e)
     {
