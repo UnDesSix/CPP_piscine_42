@@ -6,7 +6,7 @@
 Bureaucrat::Bureaucrat() : _name("default"), _grade(GRADE_MIN)
 {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade) :_name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string const &name, int grade) :_name(name), _grade(grade)
 {
     if (grade < GRADE_MAX)
         throw Bureaucrat::GradeTooHighException();
