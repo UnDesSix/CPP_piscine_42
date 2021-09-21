@@ -48,6 +48,11 @@ void        ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
     try
     {
         outputFile.open(fileName.c_str());
+        if (outputFile.good() == false)
+        {
+            throw AForm::CouldNotOpenException();
+            return ;
+        }
     }
     catch(const std::exception& e)
     {

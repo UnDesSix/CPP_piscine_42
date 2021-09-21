@@ -95,7 +95,7 @@ void    AForm::beSigned(Bureaucrat const &bureaucrat)
 void    AForm::checkForm(Bureaucrat const &bureaucrat, int const &gradeRequired) const
 {
     if (this->getState() == UNSIGNED)
-        throw AForm::FormNotSigned();
+        throw AForm::FormNotSignedException();
     if (bureaucrat.getGrade() > gradeRequired)
         throw AForm::GradeTooLowException();
 }
@@ -113,7 +113,12 @@ const char* AForm::GradeTooLowException::what() const throw()
     return ("Grade is too low!");
 }
 
-const char* AForm::FormNotSigned::what() const throw()
+const char* AForm::FormNotSignedException::what() const throw()
 {
-    return ("Form is not signed, it can't be executed!");
+    return ("Form is not signed, it cannot be executed!");
+}
+
+const char* AForm::CouldNotOpenException::what() const throw()
+{
+    return ("Error occurs while creating output file.");
 }
