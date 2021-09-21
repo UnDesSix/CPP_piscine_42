@@ -53,7 +53,7 @@ std::string const   Bureaucrat::getName(void) const
 }
 
 /*
-** ---------------- METHODS ----------------
+** ---------------- FUCNTION MEMBERS ----------------
 */
 void    Bureaucrat::getPromotion(void)
 {
