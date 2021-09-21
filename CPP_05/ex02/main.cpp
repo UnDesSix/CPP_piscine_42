@@ -5,12 +5,12 @@
 
 int main()
 {
-    Bureaucrat              Matt("Matt", 137);
-    Bureaucrat              Paul("Paul", 45);
+    Bureaucrat              Matt("Matt", 1);
+    Bureaucrat              Paul("Paul", 1);
     ShrubberyCreationForm   firstForm("target");
     RobotomyRequestForm     secondForm("target");
 
-    Paul.signForm(firstForm);
-    Matt.executeForm(firstForm);
+    Paul.signForm(secondForm);
+    Matt.executeForm(secondForm);
     return 0;
 }
