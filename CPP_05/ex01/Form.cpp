@@ -28,7 +28,6 @@ Form::~Form()
 */
 Form&  Form::operator=(Form const &rhs)
 {
-    std::cout << "YEEEEEES" << std::endl;
     if (this != &rhs)
         this->_state = rhs._state;
     return *this;
