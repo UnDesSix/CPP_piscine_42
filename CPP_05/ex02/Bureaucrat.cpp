@@ -71,20 +71,29 @@ void    Bureaucrat::getDemotion(void)
 
 void    Bureaucrat::signForm(AForm &form) const
 {
+    std::cout << C_GREEN;
     try
     {
         form.beSigned(*this);
         std::cout << this->_name << " signs " << form.getName() << std::endl;
     }
+    catch(const AForm::GradeTooLowException &e)
+    {
+        std::cout << C_YELLOW;
+        std::cout << this->_name << " cannot sign " << form.getName() << " because: " << e.what() << std::endl;
+        std::cout << "\t<The grade required to sign is " << form.getSignGrade() << " and the bureaucrat is grade " << this->_grade << ">" << std::endl;
+    }
     catch(const std::exception &e)
     {
+        std::cout << C_YELLOW;
         std::cout << this->_name << " cannot sign " << form.getName() << " because: " << e.what() << std::endl;
-        std::cout << "<The grade required to sign is " << form.getSignGrade() << " and the bureaucrat is grade " << this->_grade << ">" << std::endl;
     }
+    std::cout << C_RESET;
 }
 
 void    Bureaucrat::executeForm(AForm &form) const
 {
+    std::cout << C_GREEN;
     try
     {
         form.execute(*this);
@@ -92,13 +101,26 @@ void    Bureaucrat::executeForm(AForm &form) const
     }
     catch(const AForm::CouldNotOpenException &e)
     {
+        std::cout << C_YELLOW;
         std::cout << this->_name << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
+    }
+    catch(const AForm::FormNotSignedException &e)
+    {
+        std::cout << C_YELLOW;
+        std::cout << this->_name << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
+    }
+    catch(const AForm::GradeTooLowException &e)
+    {
+        std::cout << C_YELLOW;
+        std::cout << this->_name << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
+        std::cout << "\t<The grade required to execute is " << form.getExecGrade() << " and the bureaucrat is grade " << this->_grade << ">" << std::endl;
     }
     catch(const std::exception &e)
     {
+        std::cout << C_YELLOW;
         std::cout << this->_name << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
-        std::cout << "<The grade required to execute is " << form.getExecGrade() << " and the bureaucrat is grade " << this->_grade << ">" << std::endl;
     }
+    std::cout << C_RESET;
 }
 
 

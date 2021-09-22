@@ -47,9 +47,11 @@ void        RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
         throw ;
         return ;
     }
+    std::cout << C_CYAN;
     std::cout << "*DRILL NOISE*" << std::endl;
     if (randomVar == 0)
         std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
     else
         std::cout << "It's a failure..." << std::endl;
+    std::cout << C_GREEN;
 }

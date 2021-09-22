@@ -42,5 +42,7 @@ void        PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
         throw ;
         return ;
     }
+    std::cout << C_CYAN;
     std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+    std::cout << C_GREEN;
 }
