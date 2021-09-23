@@ -9,7 +9,8 @@ NAME = intern
 
 SRCS_DIR = ./
 SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
-
+HEADERS_DIR = ./
+HEADERS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.hpp"))
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -17,7 +18,7 @@ OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
-$(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
+$(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp $(HEADERS)
 	@mkdir -p $(OBJS_DIR)
 	@echo "\t$(_YELLOW)Compiling$(_RESET) $*.cpp\r\c"
 	@clang++ $(FLAGS) -c $< -o $@
