@@ -91,7 +91,7 @@ void    Bureaucrat::signForm(AForm &form) const
     std::cout << C_RESET;
 }
 
-void    Bureaucrat::executeForm(AForm &form) const
+void    Bureaucrat::executeForm(AForm const &form) const
 {
     std::cout << C_GREEN;
     try
