@@ -31,7 +31,7 @@ class   Bureaucrat
         void    getPromotion(void);
         void    getDemotion(void);
         void    signForm(AForm &AForm) const;
-        void    executeForm(AForm &AForm) const;
+        void    executeForm(AForm const &AForm) const;
     
     private:
         std::string const   _name;
