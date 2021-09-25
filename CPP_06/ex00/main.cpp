@@ -52,7 +52,7 @@ void    display_float(double &tmp_d, std::string &tmp_exceptions)
     else
     {
         std::cout << static_cast<float>(tmp_d);
-        if (modf(tmp_d, &intpart) == 0)
+        if (modf(tmp_d, &intpart) == 0 && tmp_d < 1000000)
             std::cout << ".0f" << std::endl;
         else
             std::cout << "f" << std::endl;
@@ -76,7 +76,7 @@ void    display_double(double &tmp_d, std::string &tmp_exceptions)
     else
     {
         std::cout << tmp_d;
-        if (modf(tmp_d, &intpart) == 0)
+        if (modf(tmp_d, &intpart) == 0 && tmp_d < 1000000)
             std::cout << ".0" << std::endl;
         else
             std::cout << std::endl;
