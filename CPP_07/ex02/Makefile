@@ -12,7 +12,7 @@ SRCS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
 HEADERS_DIR = ./
 HEADERS = $(notdir $(shell find $(SRC_DIR) -type f -name "*.hpp"))
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
