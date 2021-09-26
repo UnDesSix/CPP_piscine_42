@@ -11,7 +11,7 @@ class Array
     public:
         Array() : _n(0), _content(NULL) {}
         Array(unsigned int n) : _n(n) { _content = new T [n]; }
-        Array(Array const &src) { *this = src; }
+        Array(Array const &src) : _n(src._n), _content(NULL) { *this = src; }
         ~Array() { delete [] _content; }
 
         Array&  operator=(Array const &rhs)
