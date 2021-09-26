@@ -107,7 +107,7 @@ bool    argument_isvalid(char const*  str, double &tmp, std::string &tmp_excepti
 {
     char*       end = NULL;
 
-    if (str[0] && !str[1])
+    if (str[0] && !str[1] && (str[0] < '0' || str[0] > '9'))
     {
         tmp = static_cast<double>(str[0]);
         return true;
