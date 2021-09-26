@@ -1,5 +1,5 @@
 #ifndef __ITER
-#define __ITER
+# define __ITER
 
 #include <iostream>
 #include <string>
