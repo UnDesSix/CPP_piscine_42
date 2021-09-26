@@ -8,6 +8,7 @@ int main(void)
 
     Array< int >            arrayEmpty;
     Array< int >            arrayInt(5);
+    Array< int >            arrayInt2(5);
     Array< char const* >    arrayChar(5);
     Array< std::string >    arrayString(5);
 
@@ -37,6 +38,7 @@ int main(void)
     catch(const std::exception& e)
     {
         std::cout << "ERROR - " << e.what() << std::endl;
+    }
     
     // int*        a = new int;
     // Array<int>* b = new Array<int>; 
