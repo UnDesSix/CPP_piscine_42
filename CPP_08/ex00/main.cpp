@@ -2,9 +2,9 @@
 
 
 #define CONTAINER_SIZE 10
-// #define CONTAINER_TYPE vector
+#define CONTAINER_TYPE vector
 // #define CONTAINER_TYPE deque
-#define CONTAINER_TYPE list
+// #define CONTAINER_TYPE list
 
 
 int main(void)
