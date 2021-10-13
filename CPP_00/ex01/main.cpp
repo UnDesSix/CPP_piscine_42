@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <exception>
 #include "Phonebook.hpp"
 
 int readLine(std::string const& line, Phonebook &phoneBook)
@@ -26,7 +27,8 @@ int main(void)
         std::cout << "***************** MENU ********************" << std::endl;
         std::cout << "*   ADD    |     SEARCH     |    EXIT     *" << std::endl;
         std::cout << "*******************************************" << std::endl;
-        std::getline(std::cin, line);
+        if (!std::getline(std::cin, line))
+            return 0;
         ret = readLine(line, phoneBook);
         std::cout << std::endl;
     }

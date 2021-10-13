@@ -41,7 +41,8 @@ void Phonebook::search(void)
     for (int i(0); i < m_totalContact; i++)
         m_contact[i].displayContactsList();
     std:: cout << "Enter an index: ";
-    std::getline(std::cin, strIndex);
+    if (!std::getline(std::cin, strIndex))
+        return;
     for (int i(0); i < m_totalContact; i++)
         if (strIndex.compare(correctIndexes[i]) == 0)
             index = strIndex[0] - 48;

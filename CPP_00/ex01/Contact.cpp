@@ -22,15 +22,20 @@ void Contact::createCard(int const& index)
 {
     m_index = index;
     std::cout << "First Name: ";
-    std::getline(std::cin, m_firstName);
+    if (!std::getline(std::cin, m_firstName))
+        return;
     std::cout << "Last Name: ";
-    std::getline(std::cin, m_lastName);
+    if (!std::getline(std::cin, m_lastName))
+        return;
     std::cout << "Nickname: ";
-    std::getline(std::cin, m_nickname);
+    if (!std::getline(std::cin, m_nickname))
+        return;
     std::cout << "Phone Number: ";
-    std::getline(std::cin, m_phoneNumber);
+    if (!std::getline(std::cin, m_phoneNumber))
+        return;
     std::cout << "Darkest Secret: ";
-    std::getline(std::cin, m_darkestSecret);
+    if (!std::getline(std::cin, m_darkestSecret))
+        return;
 }
 
 void Contact::displayContactsList(void) const
