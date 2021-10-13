@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-#include <exception>
 #include "Phonebook.hpp"
 
 int readLine(std::string const& line, Phonebook &phoneBook)
